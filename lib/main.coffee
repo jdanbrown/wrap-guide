@@ -1,4 +1,4 @@
-Grim = require 'grim'
+#Grim = require 'grim'
 
 WrapGuideElement = require './wrap-guide-element'
 
@@ -17,14 +17,16 @@ module.exports =
     newColumns = []
     for customColumn in customColumns when typeof customColumn is 'object'
       {pattern, scope, column} = customColumn
-      if Grim.includeDeprecatedAPIs and pattern
-        Grim.deprecate """
-          The Wrap Guide package uses Atom's new language-specific configuration.
-          Use of file name matching patterns for Wrap Guide configuration is deprecated.
-          See the README for details: https://github.com/atom/wrap-guide.
-        """
-        newColumns.push(customColumn)
-      else if scope
+      # TODO Figure out how to build+package grim so we can leave this enabled
+      #if Grim.includeDeprecatedAPIs and pattern
+      #  Grim.deprecate """
+      #    The Wrap Guide package uses Atom's new language-specific configuration.
+      #    Use of file name matching patterns for Wrap Guide configuration is deprecated.
+      #    See the README for details: https://github.com/atom/wrap-guide.
+      #  """
+      #  newColumns.push(customColumn)
+      #else if scope
+      if scope
         if column is -1
           atom.config.set('wrap-guide.enabled', false, scopeSelector: ".#{scope}")
         else

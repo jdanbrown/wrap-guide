@@ -1,5 +1,3 @@
-Grim = require 'grim'
-
 # TODO: remove references to logical display buffer when it is released.
 
 describe "WrapGuide", ->
