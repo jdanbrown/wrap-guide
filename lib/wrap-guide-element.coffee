@@ -58,7 +58,9 @@ class WrapGuideElement
     subscriptions
 
   getDefaultColumn: ->
-    atom.config.get('editor.preferredLineLength', scope: @editor.getRootScopeDescriptor())
+    # 1 + preferredLineLength instead of preferredLineLength, so that the guide shows at the right of allowed text
+    # instead of cutting in front of the last column
+    1 + atom.config.get('editor.preferredLineLength', scope: @editor.getRootScopeDescriptor())
 
   getGuideColumn: (path, scopeName) ->
     customColumns = atom.config.get('wrap-guide.columns')

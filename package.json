@@ -1,10 +1,10 @@
 {
-  "name": "wrap-guide",
-  "version": "0.40.2",
+  "name": "wrap-guide-plus-one",
+  "version": "0.0.0",
   "main": "./lib/main",
-  "description": "Displays a vertical line at the 80th character in the editor.\nThis packages uses the config value of `editor.preferredLineLength` when set.",
+  "description": "Displays a vertical line at the 81st character in the editor.\nThis packages uses the config value of `editor.preferredLineLength + 1` when set.",
   "license": "MIT",
-  "repository": "https://github.com/atom/wrap-guide",
+  "repository": "https://github.com/jdanbrown/wrap-guide-plus-one",
   "engines": {
     "atom": "*"
   },
